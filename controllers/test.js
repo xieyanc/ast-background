@@ -26,18 +26,8 @@ class Test extends Controller {
  * @return {Object} 返回json-rpc格式结果
  */
 Test.prototype.get_list = async function(ctx) {
-  const sql = 'SELECT * FROM job_information'
-
-  const res = await $.mysql.run(sql)
-
-  if (this.service.error) {
-    return {
-      error: this.service.error,
-    };
-  }
-
   return {
-    res
+    res: 1
   }
 }
 
