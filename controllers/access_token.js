@@ -1,4 +1,4 @@
-var Controller = require("../core/controller");
+var Controller = require("../core/controller.js");
 
 /**
  * 广告
