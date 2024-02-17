@@ -1,4 +1,4 @@
-var Controller = require("../core/Controller.js");
+var Controller = require("../core/controller.js");
 
 /**
  * 媒体
@@ -16,7 +16,7 @@ class Media extends Controller {
 					tpl: "./media/",
 					// 选择的服务
 					service: "upload",
-					// 
+					//
 					get: ["video", "image", "audio"]
 				},
 				config

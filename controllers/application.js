@@ -1,4 +1,4 @@
-var Controller = require('../core/Controller.js');
+var Controller = require('../core/controller.js');
 
 /**
  * 应聘申请控制器
@@ -26,13 +26,13 @@ class Application extends Controller {
  * @return {Object} 返回json-rpc格式结果
  */ Application.prototype.add = async function(ctx) {
 	var result = await this.service.add(ctx.request.body, this.config);
-	
+
 	if (this.service.error) {
 		return {
 			error: this.service.error,
 		};
 	}
-	
+
 	return {
 		result,
 	};

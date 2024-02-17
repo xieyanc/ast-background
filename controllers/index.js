@@ -1,4 +1,4 @@
-var Controller = require("../core/Controller.js");
+var Controller = require("../core/controller.js");
 
 /**
  * 首页
@@ -43,7 +43,7 @@ Index.prototype.index = async function (ctx) {
       size,
     })
   );
-  
+
   var list_article_hot = await this.service.get_list(
     {},
     Object.assign({}, this.config, {
@@ -53,7 +53,7 @@ Index.prototype.index = async function (ctx) {
       orderby: "hits desc",
     })
   );
-  
+
   var list_article_new = await this.service.get_list(
     {},
     Object.assign({}, this.config, {
@@ -63,7 +63,7 @@ Index.prototype.index = async function (ctx) {
       orderby: "create_time desc",
     })
   );
-  
+
   var list_goods_sales = await $.services["goods"].get_list({},{orderby:"`sales` desc"});
   var list_goods_new = await $.services["goods"].get_list({},{orderby:"`create_time` desc"});
   var list_ad = await $.services["ad"].get_list({},{orderby:"`display` desc"});

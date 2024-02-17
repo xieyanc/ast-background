@@ -1,4 +1,4 @@
-var Controller = require("../core/Controller.js");
+var Controller = require("../core/controller.js");
 
 /**
  * 管理后台
@@ -30,26 +30,26 @@ Admin.prototype.index = async function(ctx) {
 
 	// 总文章数
 	var article_count = await $.services["article"].count();
-	
+
 	// 分类文章数
 	var article_type_num = await $.services["article"].count_group({}, {
 		groupby: "type"
 	});
-	
+
 	// 最近7日注册用户
 	var register_7day = await $.services["user"].date_comput({}, {
 		date_key: "create_time",
 		size: 7
 	});
 	// console.log(register_7day);
-	
+
 	// 最近7日订单量
 	var order_7day = await $.services["order"].date_comput({}, {
 		date_key: "create_time",
 		size: 7
 	});
 	// console.log(order_7day);
-	
+
 	// 最近7日营业额
 	var revenue_7day = await $.services["order"].date_comput({}, {
 		date_key: "create_time",

@@ -1,4 +1,4 @@
-var Controller = require("../core/Controller.js");
+var Controller = require("../core/controller.js");
 
 /**
  * 文章
@@ -51,7 +51,7 @@ Article.prototype.list = async function (ctx) {
 			orderby,
 		})
 	);
-	
+
 	// 获取点击量列表
 	var hot_list = await this.service.get_list({},
 		Object.assign({}, this.config, {
@@ -72,7 +72,7 @@ Article.prototype.list = async function (ctx) {
 			size: 5,
 		})
 	);
-	
+
 	// 放入模型中
 	var model = await this.model(ctx, {
 		list,
@@ -95,7 +95,7 @@ Article.prototype.view = async function (ctx) {
 		field
 	} = query;
 	delete query.field;
-	
+
 	// 获取目标对象
 	var obj = await this.service.get_obj(
 		query,
@@ -104,7 +104,7 @@ Article.prototype.view = async function (ctx) {
 			field,
 		})
 	);
-	
+
 	// 点击量排序列表
 	var hot_list = await this.service.get_list({},
 		Object.assign({}, this.config, {
@@ -128,11 +128,11 @@ Article.prototype.view = async function (ctx) {
 	// 获取上一条集合
 	var prev_list = await this.service.prev("article_id", obj.article_id);
 	var prev = prev_list.length ? prev_list[0] : {};
-	
+
 	// 获取下一条集合
 	var next_list = await this.service.next("article_id", obj.article_id);
 	var next = next_list.length ? next_list[0] : {};
-	
+
 	var model = await this.model(ctx, {
 		obj,
 		hot_list,

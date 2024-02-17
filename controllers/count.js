@@ -1,4 +1,4 @@
-var Controller = require('../core/Controller.js');
+var Controller = require('../core/controller.js');
 const Common = require('../utils/Common')
 
 /**

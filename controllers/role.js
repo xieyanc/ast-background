@@ -1,4 +1,4 @@
-var Controller = require('../core/Controller.js');
+var Controller = require('../core/controller.js');
 let adminConfig = require('../config/admin')
 let studentConfig = require('../config/student')
 let enterpriseConfig = require('../config/enterprise')

@@ -1,4 +1,4 @@
-var Controller = require('../core/Controller.js');
+var Controller = require('../core/controller.js');
 var Common = require('../utils/Common')
 const {insert} = require("mongodb/lib/core/wireprotocol");
 

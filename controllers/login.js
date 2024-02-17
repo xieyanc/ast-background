@@ -1,5 +1,5 @@
 const md5 = require("md5");
-var Controller = require("../core/Controller.js");
+var Controller = require("../core/controller.js");
 
 /**
  * 登录
