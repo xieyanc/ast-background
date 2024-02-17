@@ -2,7 +2,7 @@ module.exports = {
 	db: "mysql",
 	web: {
 		port: 5000,
-		host: "47.106.137.242"
+		host: "0.0.0.0"
 	},
 	mysql: {
 		host: "127.0.0.1",
